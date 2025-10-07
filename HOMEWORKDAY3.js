@@ -73,38 +73,64 @@ const hideFirstUl = function () {
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-const paintItGreen = function () {};
+const paintItGreen = function () {
+  const allUls = document.querySelectorAll("ul");
+  allUls.forEach((ul) => {
+    ul.style.backgroundColor = "green";
+  });
+};
 
 /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-const makeItClickable = function () {};
+const makeItClickable = function () {
+  const h1 = document.querySelector("h1");
+  h1.addEventListener("click", () => {
+    h1.innerText = h1.innerText.slice(0, -1);
+  });
+};
 
 /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-const revealFooterLink = function () {};
+const revealFooterLink = function () {
+  const footer = document.querySelector("footer");
+  const link = footer.querySelector("a");
+  footer.addEventListener("click", () => {
+    alert(link.href);
+  });
+};
 
 /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-const generateTable = function () {};
+const generateTable = function () {
+  const tableArea = document.getElementById("tableArea");
+  const table = document.createElement("table");
+  table.border = "1";
+  table.style.width = "100%";
+  table.style.borderCollapse = "collapse";
+};
 
 /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-const addRow = function () {};
-
+const addRow = function (imgUrl, nome, quantita, prezzo) {};
 /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
-const hideAllImages = function () {};
+const hideAllImages = function () {
+  const images = document.querySelectorAll("#tableArea img");
+  images.forEach((img) => {
+    img.style.display = "none";
+  });
+};
 
 /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
